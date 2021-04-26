@@ -31,3 +31,17 @@ CASE idleitor
 	 WHEN 'B3' THEN 'Leitor B3'
 END AS Obs_Leitor
 FROM CTBLInputsRecebidos;
+
+
+SELECT DISTINCT
+    first_name,
+    last_name,
+    state,
+    CASE
+      WHEN state IN ('São Paulo',
+                     'Rio de Janeiro',
+                     'Minas Gerais',
+                     'Espírito Santo') THEN 'Sudeste'
+      ELSE 'Demais regiões'
+    END AS regiao
+FROM e_commerce.customers;
